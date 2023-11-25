@@ -41,3 +41,17 @@ O link do projeto rodando na Vercel: https://med-virtua.vercel.app/
 > **Melissa de Oliveira Pecoraro** - RM: 98698 \
 > **Roberto Menezes dos Santos** - RM: 552520 \
 > **Matheus Chagas de Moraes Sampaio** - RM: 550489
+
+# Recursos á serem implementadas
+
+- Verificar se o usuário está logado
+- O login
+- Criação de posts de vacinas
+- Comentarios
+- Calendario editavel
+- Locais de consultas
+- Login de profissionais da saúde
+- Integração com API's de mapas
+- Chat com outros usuários
+- Perfil do usuário
+- API de noticias
