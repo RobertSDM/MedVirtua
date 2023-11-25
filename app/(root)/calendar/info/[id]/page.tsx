@@ -1,6 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import vaccines from "@/api/vaccines";
+import vaccines from "@/api/utils/vaccines";
 import { IComent, IVaccine } from "@/types";
 import Button from "@/components/Button";
 import Image from "next/image";

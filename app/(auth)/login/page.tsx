@@ -22,7 +22,7 @@ const Page = () => {
                         Med<span className="text-highlight ">Virtua</span>
                     </span>
                 </div>
-                <section className="max-w-sm flex flex-col items-center w-full md:max-w-lg">
+                <section className="max-w-sm flex flex-col items-center w-full md:max-w-md lg:max-w-lg">
                     <form
                         className="w-full mt-10 space-y-5 flex flex-col items-center"
                         onSubmit={handleLogin}

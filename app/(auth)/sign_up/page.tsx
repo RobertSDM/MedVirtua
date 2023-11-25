@@ -1,29 +1,61 @@
 "use client";
 
+import saveRegister from "@/api/register";
 import Button from "@/components/Button";
+import ErrorBox from "@/components/form/ErrorBox";
 import InputDefault from "@/components/form/InputDefault";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 
 const Page = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [success, setSuccess] = useState<boolean | null>(null);
+    const [renderError, setRenderError] = useState<boolean>(false);
+    const router = useRouter();
+
+    const renderErrorComponent = () => {
+        setRenderError(true);
+        setTimeout(() => {
+            setRenderError(false);
+        }, 3000);
+    };
 
     const handleSignup = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+
+        if (password !== confirmPassword) {
+            setSuccess(false);
+            renderErrorComponent();
+            return;
+        }
+
+        saveRegister(email, password)
+            .then((res) => {
+                setSuccess(res.fetchSuccess);
+                renderErrorComponent();
+                setTimeout(() => {
+                    router.replace("/calendar");
+                }, 4000);
+            })
+            .catch((err) => err);
     };
 
     return (
         <div className="flex items-center h-screen justify-center gap-x-32">
+            {renderError && (
+                <ErrorBox success={success} message="Ocorreu um erro" />
+            )}
             <section className="flex flex-col justify-center items-center h-screen w-full lg:max-w-md">
                 <div className="flex items-center gap-x-1">
                     <span className="font-bold hidden md:block text-xl">
                         Med<span className="text-highlight ">Virtua</span>
                     </span>
                 </div>
-                <section className="max-w-sm flex flex-col items-center w-full md:max-w-lg">
+                <section className="max-w-sm flex flex-col items-center w-full md:max-w-md lg:max-w-lg">
                     <form
                         onSubmit={handleSignup}
                         className="w-full mt-10 gap-y-5 flex flex-col items-center"

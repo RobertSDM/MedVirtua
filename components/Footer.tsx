@@ -64,7 +64,9 @@ const Footer = () => {
                     ))}
                 </div>
                 <div className="text-right md:text-start md:border-l-2 border-black/60 md:pl-16">
-                    <h2 className="font-semibold text-text mb-2">Equipe</h2>
+                    <h2 className="font-semibold text-text mb-2">
+                        Equipe - 1TDSPH
+                    </h2>
                     {equipe.map((e) => (
                         <p
                             key={e.fullName}

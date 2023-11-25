@@ -1,4 +1,3 @@
-"use client"
 import Link from "next/link";
 
 interface IButton {
@@ -21,17 +20,34 @@ const Button = ({
     size,
 }: IButton) => {
     return (
-        <Link href={link ? link : "#"}>
-            <button
-                type={type ?? "button"}
-                onClick={() => handle && handle()}
-                className={`${size ? size : "w-52 h-10"} active:scale-[0.95] ${
-                    color ? color : "bg-highlight"
-                } rounded-md text-white font-bold ${extraStyle}`}
-            >
-                {text}
-            </button>
-        </Link>
+        <>
+            {link ? (
+                <Link
+                    href={link}
+                    type={type ?? "button"}
+                    onClick={() => handle && handle()}
+                    className={`${
+                        size ? size : "w-52 h-10"
+                    } active:scale-[0.95] inline-block leading-10 ${
+                        color ? color : "bg-highlight"
+                    } rounded-md text-white font-bold ${extraStyle}`}
+                >
+                    {text}
+                </Link>
+            ) : (
+                <button
+                    type={type ?? "button"}
+                    onClick={() => handle && handle()}
+                    className={`${
+                        size ? size : "w-52 h-10"
+                    } active:scale-[0.95] ${
+                        color ? color : "bg-highlight"
+                    } rounded-md text-white font-bold ${extraStyle}`}
+                >
+                    {text}
+                </button>
+            )}
+        </>
     );
 };
 

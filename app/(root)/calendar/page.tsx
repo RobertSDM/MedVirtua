@@ -2,7 +2,7 @@
 import { IVaccine } from "@/types";
 import Link from "next/link";
 import { useRef } from "react";
-import vaccines from "@/api/vaccines";
+import vaccines from "@/api/utils/vaccines";
 
 const CardDate = (v: IVaccine) => {
     return (

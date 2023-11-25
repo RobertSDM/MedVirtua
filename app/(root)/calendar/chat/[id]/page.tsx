@@ -1,5 +1,5 @@
 "use client";
-import chat from "@/api/chats";
+import chat from "@/api/utils/chats";
 import Button from "@/components/Button";
 import SendMessageInput from "@/components/form/SendMessageInput";
 import Message from "@/components/Message";
