@@ -30,7 +30,7 @@ const Button = ({
                         size ? size : "w-52 h-10"
                     } active:scale-[0.95] inline-block leading-10 ${
                         color ? color : "bg-highlight"
-                    } rounded-md text-white font-bold ${extraStyle}`}
+                    } rounded-md text-white font-bold text-center ${extraStyle}`}
                 >
                     {text}
                 </Link>
@@ -42,7 +42,7 @@ const Button = ({
                         size ? size : "w-52 h-10"
                     } active:scale-[0.95] ${
                         color ? color : "bg-highlight"
-                    } rounded-md text-white font-bold ${extraStyle}`}
+                    } rounded-md text-white font-bold text-center ${extraStyle}`}
                 >
                     {text}
                 </button>
