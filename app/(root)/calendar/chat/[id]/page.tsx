@@ -34,7 +34,7 @@ const ChatPoster = () => {
                         validChats.map((c) => <Message {...c} key={c.id} />)
                     ) : (
                         <h1 className="text-center text-lg mt-10 font-bold text-text/50">
-                            {/* // TODO: adicionar texto  */}
+                            Nenhuma conversa encontrada
                         </h1>
                     )}
                 </div>
